@@ -43,7 +43,7 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 To use the application, please download all associated files off the [GitHub repository](https://github.com/B3nj1e/Social-Network-API). Ensure node.js is installed. In the terminal run ``npm i`` to install the dependencies and packages. Once you have install the packages, run ``node index.js`` to start the server. Ensure you have Insomnia and MongoDBCompass installed. You will be able to use Insomnia to interact with the server to send and receive data to the database using MongoDB Compass. Using MongoDB Compass you will be able to see data in the tables under "socialNetworkDB" and using Insomina installed you will get able to run the GET, PUT, POST and DELETE HTTP requests to interact with stored data. Use localhost at PORT 3001 to access the routes. Use the POST route to enter you own data.  
 
 ## Usage Instructions
-Please click [here]() to view a video tutorial on how to use this application. 
+Please click [here](https://drive.google.com/file/d/1O0Op4oCU_ERdEUqy774EDY2mU3s52Ikt/view) to view a video tutorial on how to use the User and Friends component of this application, and please click [here](https://drive.google.com/file/d/1MriEU7uehTHdnSNrQQlot3xG0-qu3x-p/view) for a demo on the Thoughts and Reactions components. 
 
 ## Contribution Guidelines
 If you think you can improve this application, please feel free to make contributions. I will review these changes on GitHub prior to merging them to the main branch.

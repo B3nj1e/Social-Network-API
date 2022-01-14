@@ -20,7 +20,7 @@ const thoughtSchema = new Schema(
     },
     username: [
       {
-        type: string,
+        type: String,
         ref: 'User',
       },
     ],

@@ -52,4 +52,31 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
+
+
+
+
+
+
+
+createReaction(req, res) {
+  Thought.findOneAndUpdate({ _id: req.params.thoughtId },
+    { reactions: req.body },
+    { runValidators: true, new: true })
+    .then((thought) => res.json(thought))
+    .catch((err) => {
+      console.log(err);
+      return res.status(500).json(err);
+    });
+},
+// Delete a reaction
+deleteReaction(req, res) {
+  Thought.find({ _id: req.params.thoughtId })
+    .then((thought) => res.json(thought))
+    .catch((err) => {
+      console.log(err);
+      return res.status(500).json(err);
+    });
+}
 };

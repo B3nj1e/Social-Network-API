@@ -1,6 +1,6 @@
 const { Schema, Types } = require('mongoose');
 
-const assignmentSchema = new Schema(
+const thoughtSchema = new Schema(
   {
     assignmentId: {
       type: Schema.Types.ObjectId,
@@ -31,4 +31,4 @@ const assignmentSchema = new Schema(
   }
 );
 
-module.exports = assignmentSchema;
+module.exports = thoughtSchema;

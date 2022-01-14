@@ -4,10 +4,6 @@ const reactionSchema = require ('./Reaction');
 // Schema to create a thought model
 const thoughtSchema = new Schema(
   {
-    assignmentId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId(),
-    },
     thoughtText: {
       type: String,
       required: true,
@@ -23,6 +19,12 @@ const thoughtSchema = new Schema(
         type: String,
         ref: 'User',
       },
+    ],
+    userId: [
+      {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      }
     ],
     reactions: 
     [reactionSchema],

@@ -6,29 +6,48 @@ const thoughtSchema = new Schema(
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
-    assignmentName: {
+    thoughtText: {
       type: String,
       required: true,
-      maxlength: 50,
-      minlength: 4,
-      default: 'Unnamed assignment',
-    },
-    score: {
-      type: Number,
-      required: true,
-      default: () => Math.floor(Math.random() * (100 - 70 + 1) + 70),
+      maxlength: 280,
+      minlength: 1,
     },
     createdAt: {
       type: Date,
       default: Date.now,
     },
+    username: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+    ],
+    reactions: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Reaction',
+      },
+    ],
   },
   {
     toJSON: {
+      virtuals: true,
       getters: true,
     },
     id: false,
   }
 );
 
-module.exports = thoughtSchema;
+thoughtSchema
+.virtual('reactionCount')
+.get(function () {
+  return this.reactions.length;
+})
+.set(function () {
+  const reactionCount = this.reactions.length;
+  this.set({reactionCount});
+})
+
+const Thought = model('Thought', thoughtSchema);
+
+module.exports = Thought;
